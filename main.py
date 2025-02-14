@@ -1,5 +1,13 @@
-two_digit_number=input("Enter a two digit number to get its summation : \n");
+# Age remaining calculator.
 
-sum_two_digit_number = sum( [int(two_digit_number[0]) , int(two_digit_number[1])]);
+current_age=int( input("What is your current age? \n"))
+years_remaining= 90-current_age
 
-print("The sum of the two digit number is : " + str(sum_two_digit_number));
+weeks_remaining = years_remaining * 57
+days_remaining = years_remaining  * 365
+months_remaining = years_remaining *12
+
+
+print(f"You have {years_remaining} years, {months_remaining} months, {weeks_remaining} weeks & {days_remaining} days left.  Have Fun!!")
+
+
