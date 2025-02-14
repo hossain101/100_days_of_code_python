@@ -1,13 +1,11 @@
-# Age remaining calculator.
+# Tip Calculator.
 
-current_age=int( input("What is your current age? \n"))
-years_remaining= 90-current_age
+print("Welcome to the tip calculator.")
+total_bill = float(input("What was the total bill ? \n"))
+percentage_tip = int(input("What percentage of tip would you like to give? 10, 12, 0r 15? \n"))
+people_split = int(input("How many people to split the bill? \n"))
 
-weeks_remaining = years_remaining * 57
-days_remaining = years_remaining  * 365
-months_remaining = years_remaining *12
+split_bill = total_bill * (1+ percentage_tip/100) /people_split
 
-
-print(f"You have {years_remaining} years, {months_remaining} months, {weeks_remaining} weeks & {days_remaining} days left.  Have Fun!!")
-
+print(f"Each person should pay : ${round(split_bill,2)}")
 
