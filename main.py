@@ -1,24 +1,17 @@
-# BMI Calculator
+# Leap Year Calculator
 
-print("Welcome to BMI calculator")
+print("Welcome to leap year calculator")
 
-height = float(input("What is your height in m2 : "))
-weight = float(input("What is your weight in KG : "))
+year = int(input("Enter the year you wish to check : "))
 
-BMI = round(weight/height**2)
-print(f"Your BMI : {BMI}")
-if BMI<18.5:
-    print("You are underweight")
-elif BMI<25:
-    print("You have normal weight")
-elif BMI<30:
-    print("You are overweight")
-elif BMI<35:
-    print("You are obese")
+if year % 4 == 0:
+    if year % 100 == 0:
+        if year % 400 == 0:
+            print("Leap Year")
+
+        else:
+            print("not A leap year")
+    else:
+        print("a leap year")
 else:
-    print("You are clinically obese")
-
-
-
-
-
+    print(" Not a Leap Year")
