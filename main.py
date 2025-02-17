@@ -1,25 +1,32 @@
-# Ticket Counter : Nested if elif else statement with photo option
+# Pizza Ordering system
 
-print("Welcome to the rollercoaster ride!!")
-height = int(input("Enter your height in cm : "))
-age = int(input("Enter your age in years : "))
-bill = 0
-if height >= 120:
-    print("You are tall enough to ride the rollercoaster!!")
-    if age >= 18:
-        bill = 20
+print("Welcome to Python Pizza Deliveries!")
 
-    elif age >= 12:
-        bill = 15
+size = input("What size pizza do you want? S,M,L : ").capitalize()
+
+add_pepperoni = input("Do you want pepperoni?(Y/N) : ")
+extra_cheese = input("Do you want extra cheese?(Y/N) : ")
+
+total_bill = 0
+
+if size == "S":
+    total_bill += 15
+
+elif size == "M":
+    total_bill += 20
+elif size == "L":
+    total_bill += 25
+
+if add_pepperoni == "Y":
+    if size == "S":
+        total_bill += 2
 
     else:
-        bill = 10
+        total_bill += 3
 
-    want_photo = input("Photo on ride additional $3 (Y/N) : ")
-    if want_photo.capitalize() == "Y":
-        bill += 3
-        print(f"Your Total Bill = {bill}")
-    else:
-        print(f"Your Total Bill = {bill}")
-else:
-    print("Get some inches in you before you can have a ride ")
+
+if extra_cheese == "Y":
+    total_bill += 1
+
+
+print(f"Your Total Bill is : ${total_bill}")
