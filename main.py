@@ -1,17 +1,25 @@
-# Leap Year Calculator
+# Ticket Counter : Nested if elif else statement with photo option
 
-print("Welcome to leap year calculator")
+print("Welcome to the rollercoaster ride!!")
+height = int(input("Enter your height in cm : "))
+age = int(input("Enter your age in years : "))
+bill = 0
+if height >= 120:
+    print("You are tall enough to ride the rollercoaster!!")
+    if age >= 18:
+        bill = 20
 
-year = int(input("Enter the year you wish to check : "))
+    elif age >= 12:
+        bill = 15
 
-if year % 4 == 0:
-    if year % 100 == 0:
-        if year % 400 == 0:
-            print("Leap Year")
-
-        else:
-            print("not A leap year")
     else:
-        print("a leap year")
+        bill = 10
+
+    want_photo = input("Photo on ride additional $3 (Y/N) : ")
+    if want_photo.capitalize() == "Y":
+        bill += 3
+        print(f"Your Total Bill = {bill}")
+    else:
+        print(f"Your Total Bill = {bill}")
 else:
-    print(" Not a Leap Year")
+    print("Get some inches in you before you can have a ride ")
