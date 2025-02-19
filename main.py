@@ -1,10 +1,18 @@
-# Bill Split game
-import random
+# Treasure Map
 
-name_string = input("Please enter names of participants, separated by , and a space.\n")
+row1 = ["💕", "💕", "💕"]
+row2 = ["💕", "💕", "💕"]
+row3 = ["💕", "💕", "💕"]
 
-name_list = name_string.split(", ")
+map = [row1, row2, row3]
 
-random_index = random.randint(0, len(name_list) - 1)
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you wish o put the treasure?\n")
 
-print(f"{name_list[random_index]} will have to pay the bill.")
+column = int(position[0])
+
+row = int(position[1])
+
+map[row - 1][column - 1] = "X"
+
+print(f"\n{row1}\n{row2}\n{row3}")
