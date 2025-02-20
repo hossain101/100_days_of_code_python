@@ -1,18 +1,74 @@
-# Treasure Map
+# Rock Paper scissor game
+import random
 
-row1 = ["💕", "💕", "💕"]
-row2 = ["💕", "💕", "💕"]
-row3 = ["💕", "💕", "💕"]
+rock_img = r"""
+       ,--.--._
+------" _, \___)
+        / _/____)
+        \//(____)
+------\     (__)
+       `-----"
+ 
+"""
 
-map = [row1, row2, row3]
+scissors_img = r"""
 
-print(f"{row1}\n{row2}\n{row3}")
-position = input("Where do you wish o put the treasure?\n")
+    _       ,/'
+   (_).  ,/'
+   __  ::
+  (__)'  `\.
+            `\.
 
-column = int(position[0])
+"""
 
-row = int(position[1])
+paper_img = """
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+"""
 
-map[row - 1][column - 1] = "X"
+rock = "rock"
+paper = "paper"
+scissor = "scissor"
 
-print(f"\n{row1}\n{row2}\n{row3}")
+
+list_moves = [rock, paper, scissor]
+
+computer_move = random.choice(list_moves)
+
+player_move = input("ROCK, PAPER, SCISSOR!!!?\n").lower()
+
+print(f"COMPUTER MOVE : {computer_move}")
+if computer_move == rock:
+    print(rock_img)
+elif computer_move == paper:
+    print(paper_img)
+elif computer_move == scissor:
+    print(scissors_img)
+
+print(f"Your Move : {player_move}")
+if player_move == rock:
+    print(rock_img)
+elif player_move == paper:
+    print(paper_img)
+elif player_move == scissor:
+    print(scissors_img)
+
+if computer_move == player_move:
+    print("It is a Draw!")
+
+elif computer_move == rock and player_move == scissor:
+    print("Computer Wins!!")
+elif computer_move == paper and player_move == rock:
+    print("Computer Wins!!")
+elif computer_move == scissor and player_move == paper:
+    print("Computer Wins!!")
+elif player_move == rock and computer_move == scissor:
+    print("You  Win!!")
+elif player_move == paper and computer_move == rock:
+    print("You  Win!!")
+elif player_move == scissor and computer_move == paper:
+    print("You  Win!!")
