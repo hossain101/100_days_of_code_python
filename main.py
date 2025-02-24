@@ -1,15 +1,8 @@
-# Loops : Average Height coding exercise
+# Loops : sum of all the even numbers
 
-student_heights = input("Input a list of student heights: ").split(", ")
+sum = 0
 
-index = 0
-sum_total = 0
+for i in range(0, 101, 2):
+    sum += i
 
-for n in student_heights:
-    sum_total += int(n)
-    index += 1
-
-average = sum_total / index
-
-print("The average height is ", average)
-print(f"The total number of students : {index}")
+    print(sum)
