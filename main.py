@@ -1,8 +1,11 @@
-# Loops : sum of all the even numbers
+# Loops : fizz buzz
 
-sum = 0
-
-for i in range(0, 101, 2):
-    sum += i
-
-    print(sum)
+for n in range(1, 101):
+    if n % 3 == 0 and n % 5 == 0:
+        print("fizzbuzz")
+    elif n % 5 == 0:
+        print("buzz")
+    elif n % 3 == 0:
+        print("fizz")
+    else:
+        print(n)
