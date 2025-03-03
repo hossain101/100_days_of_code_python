@@ -1,4 +1,4 @@
-# Loops : random password generator 
+# Loops : random password generator
 import random
 
 print("Welcome to python password generator!!")
