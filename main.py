@@ -1,31 +1,17 @@
-# Hangman Challenge : Checking to see if guessed letter is in the chosen word
-import random
+#How to create functions with arguments.
+def greet():
+    print("Hello")
+    print("Hello")
+    print("Hello")
 
 
-word_list = ["ardvark", "baboon", "camel"]
-
-chosen_word = list(random.choice(word_list))
-
-word_length = len(chosen_word)
-
-puzzle_structure = ""
-
-for letter in chosen_word:
-    puzzle_structure += "_"
+greet()
 
 
-puzzle_structure = list(puzzle_structure)
-count_of = puzzle_structure.count("_")
-lives = 6
+def greet_with_name(name):
+    print(f"Hello {name}")
+    print("Hello")
+    print("Hello")
 
-while "_" in puzzle_structure and lives > 0:
-    print(puzzle_structure)
-    guess = input("Guess a letter: \n").lower()
 
-    if guess not in chosen_word:
-        lives -= 1
-        print(f"Wrong guess. You have {lives} lives left.")
-
-    for i in range(len(chosen_word)):
-        if guess == chosen_word[i]:
-            puzzle_structure[i] = guess
+greet_with_name(name="<NAME>")
