@@ -1,12 +1,18 @@
-#No of cans of paint
-import math
-height = int(input("Enter your height in metres: "))
-width = int(input("Enter your width in metres: "))
+# prime number checker
 
 
-def pait_calc(height=height, width=width, coverage=5):
-    no_can = math.ceil(((height * width) / coverage))
-    print(f"No of cans required : {no_can}")
+def prime_checker(number):
+    isPrime = True
+    for i in range(2, number):
+        if number % i == 0:
+            isPrime = False
+
+    if isPrime == True:
+        print("Prime number")
+    else:
+        print("Not Prime number")
 
 
-pait_calc()
+input_number = int(input("Enter a number: "))
+
+prime_checker(number=input_number)
