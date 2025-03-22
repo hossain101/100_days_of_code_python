@@ -1,18 +1,53 @@
-# prime number checker
+# Caesar Cipher
+
+alphabets = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+]
 
 
-def prime_checker(number):
-    isPrime = True
-    for i in range(2, number):
-        if number % i == 0:
-            isPrime = False
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt: \n ")
 
-    if isPrime == True:
-        print("Prime number")
-    else:
-        print("Not Prime number")
+text = input("Type your text to be encrypted: ").lower()
+
+shift = int(input("Type the shift of the letter: "))
 
 
-input_number = int(input("Enter a number: "))
+def encrypt(text_1, shift_1):
+    encrypted_string = ""
+    for letters in text_1:
+        if letters in alphabets:
+            index_no = alphabets.index(letters)
 
-prime_checker(number=input_number)
+            shifted_index = index_no + shift_1
+            if shifted_index >= len(alphabets):
+                shifted_index = shifted_index - len(alphabets)
+            encrypted_string += alphabets[shifted_index]
+    print(f"The encrypted text is: {encrypted_string}")
+
+
+encrypt(text_1=text, shift_1=shift)
